@@ -8,11 +8,12 @@ import Paginate from '../components/Paginate';
 import ProductCarousel from '../components/ProductCarousel';
 
 const HomeScreen = () => {
-  const { pageNumber } = useParams();
+  const { pageNumber, keyword } = useParams();
 
   console.log(pageNumber);
 
   const { data, isLoading, error } = useGetProductsQuery({
+    keyword,
     pageNumber,
   });
 
